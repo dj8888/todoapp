@@ -1,4 +1,5 @@
-*{ /*      * is universal selcetor     */
+html{ /*   alternatively " * " is universal selcetor  
+        can be used inplace of html   */
    
    
     margin:0px;
@@ -8,12 +9,40 @@
     
     align-items: center;
     justify-items: center;
+
     --bg: #fcfcfc;
     --bg--panel:#ebebeb;
     --color-headings:#0077ff;
     --color-text:#333333;
-
+    --color-toggle:#272b2f;
+    --bg-sidebar:#d9d9d9;
 }
+
+/*For drak theme*/
+
+html[data-theme="dark"]{
+
+    --bg: #333333;
+    --bg--panel:#434343;
+    --color-headings:#3694ff;
+    --color-text:#b5b5b5;
+    --color-toggle:#fcfcfc;
+    --bg-sidebar:#363636;
+    
+}
+
+
+html.transition,
+html.transition *,
+html.transition *:before,
+html.transition *:after {
+    transition: all 750ms !important;
+    transition-delay:0 !important;
+}
+
+
+
+/*dark theme end*/
 
 body{
     background-color: var(--bg);
@@ -21,25 +50,61 @@ body{
 }
 
 
+.container{
 
-#sidebar{
+    background-color: var(--bg--panel);
+    margin:5em;
+    padding: 5em;
+    border-radius: 15px;
+    display: grid;
+    grid-template-columns: 80% auto;
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+        "title switch"
+        "content content"
 
-    position: fixed;
-    width:200px;
-    height:100%;
-    background:#272b2f;
-    left:-200px;
-    transition: all 350ms ease-in-out ;
+    ;
+}
 
+h1 {
+    margin: 0;
+    color: var(--color-headings);
+
+}
+
+p {
+    color: var(--color-text);
+    grid-area: content;
+    font-size: 1.1em;
+    line-height: 1.8em;
+    margin-top: 2em;
 }
 
 
 
 
+
+
+
+
+
 /*for sidebar*/
+#sidebar{
+
+    position: fixed;
+    width:200px;
+    height:100%;
+    background:var(--bg-sidebar);
+    left:-200px;
+    top:0px;
+    transition: all 350ms ease-in-out ;
+
+}
+
+
 #sidebar ul li {
 
-    color:rgba(230,230,230,0.9);
+    color:var(--color-text);
     list-style-type: none;
     padding:15px 10px; /*top padding, bottom padding*/
 
@@ -68,7 +133,7 @@ body{
     display:block;
     width:30px;
     height:5px;
-    background:#272b2f;
+    background:var(--color-toggle);
     margin:3px 0px;
 
 
@@ -108,7 +173,7 @@ label:after {
 }
 
 input:checked + label {
-	background: #bada55;
+	background: var(--color-headings);
 }
 
 input:checked + label:after {
