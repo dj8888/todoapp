@@ -10,20 +10,35 @@ html {
   justify-items: center;
   --bg: #fcfcfc;
   --bg--panel:#ebebeb;
-  --color-headings:#0077ff;
+  --color-headings:#fa0f94;
   --color-text:#333333;
-  --color-toggle:#272b2f;
+  --color-toggle:#fcfcfc;
   --bg-sidebar:#d9d9d9;
+}
+
+html body {
+  background-image: radial-gradient(var(--bg), #afafaf);
+  font-family: 'Bangers', cursive;
+}
+
+html b {
+  text-shadow: 2px 2px #000;
+  font-size: 5em;
+  letter-spacing: 5px;
 }
 
 /*For drak theme*/
 html[data-theme="dark"] {
   --bg: #333333;
   --bg--panel:#434343;
-  --color-headings:#3694ff;
-  --color-text:#b5b5b5;
-  --color-toggle:#fcfcfc;
+  --color-headings:#610099;
+  --color-text:#c5c5c5;
+  --color-toggle:#363636;
   --bg-sidebar:#363636;
+}
+
+html[data-theme="dark"] body {
+  background-image: radial-gradient(var(--bg), #141414);
 }
 
 html.transition,
@@ -44,7 +59,7 @@ body {
 .container {
   background-color: var(--bg--panel);
   margin: 5em;
-  padding: 5em;
+  padding: 0em;
   border-radius: 15px;
   display: -ms-grid;
   display: grid;
@@ -81,6 +96,7 @@ p {
   top: 0px;
   -webkit-transition: all 350ms ease-in-out;
   transition: all 350ms ease-in-out;
+  z-index: 1;
 }
 
 #sidebar ul li {
@@ -97,7 +113,7 @@ p {
 }
 
 #sidebar.active {
-  left: 0px;
+  left: -40px;
 }
 
 #sidebar .toggle-btn span {
@@ -155,4 +171,119 @@ label:active:after {
 }
 
 /* toggle button end */
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.defaultList {
+  /* Set all odd list items to a different color (zebra-stripes) 
+  ul li:nth-child(odd) {
+    background: #f9f9f9;
+  }
+
+  */
+  /* Darker background-color on hover */
+  /* When clicked on, add a background color and strike out text */
+  /* Add a "checked" mark when clicked on */
+  /* Style the close button */
+}
+
+.defaultList ul {
+  margin: 0;
+  padding: 0;
+}
+
+.defaultList ul li {
+  cursor: pointer;
+  position: relative;
+  padding: 12px 8px 12px 40px;
+  background: var(--bg--panel);
+  font-size: 20px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  color: var(--color-text);
+  /* make the list items unselectable */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.defaultList ul li:hover {
+  background: var(--color-headings);
+}
+
+.defaultList ul li.checked {
+  background: #888;
+  color: #fff;
+  text-decoration: line-through;
+}
+
+.defaultList ul li.checked::before {
+  content: '';
+  position: absolute;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  top: 10px;
+  left: 16px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  height: 15px;
+  width: 7px;
+}
+
+.defaultList .close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 12px 16px 12px 16px;
+}
+
+.defaultList .close:hover {
+  background-color: red;
+  color: white;
+}
+
+.defaultList .header {
+  background-image: linear-gradient(-45deg, #ffe45c, #ff3838, #1f96ff, #ff1f9e);
+  padding: 30px 40px;
+  color: white;
+  text-align: center;
+}
+
+.defaultList .header:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.defaultList input {
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  width: 75%;
+  padding: 10px;
+  float: left;
+  font-size: 16px;
+}
+
+.defaultList .addBtn {
+  padding: 10px;
+  width: 25%;
+  background: #d9d9d9;
+  color: #555;
+  float: left;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  border-radius: 0;
+}
+
+.defaultList .addBtn:hover {
+  background-color: #bbb;
+}
 /*# sourceMappingURL=main.css.map */
