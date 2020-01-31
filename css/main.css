@@ -141,6 +141,7 @@ label {
   display: block;
   border-radius: 10px;
   position: relative;
+  float: right;
 }
 
 label:after {
