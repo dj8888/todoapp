@@ -307,7 +307,25 @@ label:active:after {
     padding: 30px 15px;
     color: white;
     text-align: center;
+    background-size: 400% 400%;
+    position: relative;
+    animation: change 10s ease-in-out infinite;
   }
+
+  @keyframes change {
+    0%{
+      background-position: 0 50%;
+    }
+    50%{
+      background-position: 100% 50%;
+    }
+    100%{
+      background-position: 0 50%;
+    }
+
+
+  }
+  
   
   
   .header:after {
