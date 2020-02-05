@@ -78,8 +78,8 @@ list.addEventListener('click', function(ev) {
 function newElement() {
   var li = document.createElement("li");
   var inputValue = document.getElementById("myInput").value;
-  var text = document.createTextNode(inputValue);
-  li.appendChild(text);
+  var task = document.createTextNode(inputValue);
+  li.appendChild(task);
   if (inputValue === '') {
     alert("Write Something!");
   } else {
@@ -100,3 +100,29 @@ function newElement() {
     }
   }
 }
+
+//also binding enter to newElement function along with clicking on the ADD button
+document.addEventListener("keyup",function(even){
+  if(event.keyCode == 13){
+   
+    newElement();  
+      
+  }
+});
+
+
+
+
+
+// Show todays date
+const dateElement = document.getElementById("date");
+const options = {weekday : "long", month:"short", day:"numeric"};
+const today = new Date();
+
+dateElement.innerHTML = today.toLocaleDateString("en-US", options);
+
+//get user name
+var user = prompt("Enter your name?");
+document.getElementById("user").innerHTML = user;
+
+

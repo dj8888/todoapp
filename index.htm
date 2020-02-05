@@ -20,13 +20,21 @@
 
         </div>
         <ul>
-            <li>Name</li>
-            <hr>
+            <div class="art-container">
+        
+                <div id="user"></div>
+                <div id="date"></div>
+            
+            </div>
+
+            
             <li>Default List</li>
             <li>Tasks</li>
-            <hr>
-            <li class="dark-theme-option">Dark Theme<input type="checkbox" id="switch" name="theme"/><label for="switch">Toggle</label></li>
 
+            <div id="dark-theme-option">
+            <hr>
+            <li>Dark Theme<input type="checkbox" id="switch" name="theme"/><label for="switch">Toggle</label></li>
+            </div>    
 
 
 
@@ -39,7 +47,7 @@
     
     <div class="defaultList">
     <div id="myDIV" class="header">
-        <h2 style="margin:5px"><b text-shadow: 2px 2px #ff0000;>To Do List App</b></h2>
+        <h2 style="margin:5px"><b>To Do List App</b></h2>
         <input type="text" id="myInput" placeholder="Title...">
         <span onclick="newElement()" class="addBtn">Add</span>
       </div>
@@ -52,6 +60,9 @@
       </ul>
 
     </div>
+
+    <img class="delete-list-button" src="img/trash-button.png">
+    
 
 
 
