@@ -67,7 +67,8 @@ body {
       grid-template-columns: 80% auto;
   -ms-grid-rows: auto auto;
       grid-template-rows: auto auto;
-      grid-template-areas: "title switch" "content content";
+      grid-template-areas: "title switch"
+ "content content";
 }
 
 h1 {
@@ -365,5 +366,12 @@ label:active:after {
   left: 10px;
   color: #FFF;
   font-size: 1rem;
+}
+
+
+.newfeature:hover:after{
+  content: attr(data-hover);
+  font-size:15px;
+
 }
 /*# sourceMappingURL=main.css.map */
